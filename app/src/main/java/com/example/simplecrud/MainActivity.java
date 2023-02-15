@@ -11,7 +11,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    Button submit,delete,view,update;
+    Button submit,delete,view,update,commit;
     EditText id,name,roll,marks;
     dbHandler mydb;
     @Override
@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         roll=findViewById(R.id.rollfld);
         marks=findViewById(R.id.marksfld);
         mydb=new dbHandler(this);
+        commit=findViewById(R.id.commitbtn);
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,6 +78,16 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Nothing to delete", Toast.LENGTH_SHORT).show();
             }
         });
+        commit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goLink("https://github.com/AmeenaFatima01/StudentRecordsApp/commits/main");
+            }
+        });
+
+    }
+
+    private void goLink(String s) {
 
     }
 
